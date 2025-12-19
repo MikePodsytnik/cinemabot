@@ -9,8 +9,11 @@ from bot.config import load_config
 from bot.db import init_db
 from bot.handlers import build_router
 
+import logging
+logging.basicConfig(level=logging.INFO)
 
 async def main() -> None:
+    print("BOT STARTED", flush=True)
     cfg = load_config()
     await init_db(cfg.db_path)
 
